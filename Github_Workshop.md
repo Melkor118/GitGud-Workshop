@@ -35,7 +35,11 @@ $ git #the output will show correctly and the error will no longer be there
 
 Now that we have this set up lets move on. We will run into issues later but we'll tackle them as it comes up.
 
+
+
 ![alt text](images/Overview.png)
+
+
 
 ### What is git?
 Git is a free and open source distributed version control system. What is version control? Essentially, it’s a system that allows you to record changes to files over time, thus, you can view specific versions of those files later on.
@@ -46,11 +50,19 @@ Over time, Git has become an industry standard for development. Being able to sn
 ### How It Works
 With Git, you record local changes to your code using a command-line tool, called the “Git Shell” (you can use Git in other command-line tools — I’ll refer to Git Shell through the following sections). Command-line lets you enter commands to view, change, and manage files and folders in a simple terminal, instead of using a graphical user interface (GUI). If you have not used command-line before, don’t worry, once you get started, it is incredibly straightforward.
 
+
+
 ![alt text](images/git-1.png)
+
+
 
 Essentially, when using Git, you make changes to your code files as you normally would during the development process. When you have completed a coding milestone, or want to snapshot certain changes, you add the files you changed to a staging area and then commit them to the version history of your project (repository) using Git. Below, you’ll learn about the Git commands you use for those steps.
 
+
+
 ![alt text](images/The_Basics.png)
+
+
 
 ### Terminal Commands
 While using Git on the command line, chances are you will also use some basic terminal commands while going through your project and system files / folders, including:
@@ -108,7 +120,11 @@ Write anything you'd like and save (Code50 autosaves).
 ```Shell
 $ git status
 ```
+
+
 ![alt text](images/Git_Status.png)
+
+
 
 We can now see that git has seen that we have added a file. This file is currently untracked which means that it is not version controlled right now. lets change that.
 
@@ -118,7 +134,11 @@ $ git add *.cpp #will add everything from yoru current directory that is a .cpp 
 $ git add README.md #will add the README.md file as a tracked file.
 ```
 
+
+
 ![alt text](images/Git_Status-2.png)
+
+
 
 Now it is being picked up as a tracked file and will be included in our first 'commit'.
 
@@ -144,11 +164,19 @@ This is still all locally housed on your computer but is still version controlli
 
 ### How it works
 
+
+
 ![alt text](images/Git_Status-3.png)
+
+
 
 Now lets see how it works with Github
 
+
+
 ![alt text](images/Github.png)
+
+
 
 ### Overview
 
@@ -158,11 +186,19 @@ As a service, GitHub is now used by 12 million developers and organizations, and
 
 ### How it works
 
+
+
 ![alt text](images/Github-1.png)
+
+
 
 With GitHub, you have the same local process of adding and committing files to an initialized Git repository on your computer. However, you can utilize GitHub to push your changes to GitHub’s hosting service. This allows other people to similarly work on the same project, pull your changes to their computers, and push their own changes to GitHub. Continue below to see the commands you can use to utilize Git with GitHub.
 
+
+
 ![alt text](images/Git_Github.png)
+
+
 
 ### Creating and Copying Repositories
 
@@ -172,7 +208,11 @@ As stated in the previous section you can also initialise a git repository from 
 
 #### Fork (cannot be done on the command line)
 
+
+
 ![alt text](images/Fork.png)
+
+
 
 Forking a repository essentially copies that project to your online GitHub account. However, to work on that project on your local computer, you must clone the project.
 
@@ -180,17 +220,29 @@ Forking a repository essentially copies that project to your online GitHub accou
 
 Cloning a project simply copies a Git repository with its version history, by its url, to your local computer from GitHub. From there, you can make and commit changes of your own to that repository. Any changes you commit and then push to GitHub (see below) are saved for your copy of that project.
 
+
+
 ![alt text](images/clone.png)
+
+
 
 Lets try and connect our existing repository to Github so we can share how gud we are with the world.
 
 First we need to ask Github to set aside space on their servers for our Git repo.
 
+
+
 ![alt text](images/Github_New_Repo-1.png)
+
+
 
 ![alt text](images/Github_New_Repo-2.png)
 
+
+
 ![alt text](images/Github_New_Repo-3.png)
+
+
 
 Now as shown in the last picture, we have a few options to get content into our new repo. lets connect our initial repo to Github using the 2nd snippet
 
@@ -216,10 +268,18 @@ Now that we have a Personal Access Token to allow CS50 to access our private rep
 There are a few different ways you can do this and I will leave it to you to decide as to which you use as each have pros and cons regarding security.
 
 #### Include the token in the remote url
+
+
 ![GITHUB TOKEN 1](images/GITHUB_TOKEN-1.png)
 
+
+
 #### Change the Environment Variable
+
+
 ![GITHUB TOKEN 2](images/GITHUB_TOKEN-2.png)
+
+
 
 Unfortunately these are not persistent. We have tested putting commands in the .bashrc file to make this persistent but it does not get backed up. I am still looking into a persistent method.
 
@@ -258,11 +318,19 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 
 We have now pushed our local git repo to Github.
 
+
+
 ![alt text](images/Github_New_Repo-4.png)
+
+
 
 Lets try another way of creating a new repo. navigate to Github and create a 2nd repo. This time add a README and a .gitignore file using the C template. The .gitignore is a file that tells git to ignore certain files.
 
+
+
 ![alt text](images/MySecondRepo-1.png)
+
+
 
 Copy the github link as before and clone the repo into Code50.
 
@@ -307,7 +375,11 @@ Now that we know how to start up repositories let's talk about how the real worl
 
 Branches are a tool used in Github to allow simultaneous development across different versions of the Repo.
 
+
+
 ![alt text](images/branches-1.png)
+
+
 
 The above diagram shows this. We won't need to do this during uni but you can use it if you wish to practice using branches. We will quickly touch on branching now.
 
@@ -359,21 +431,33 @@ $ git push origin assignment1
 
 Now if you go back to your repo you will see it looks a little different.
 
+
+
 ![alt text](images/branches-2.png)
+
+
 
 We have a new branch which contains different content to our main branch, switch to it by click on the dropdown where main is.
 
 ![alt text](images/branches-3.png)
 
+
+
 Now to merge the changes into our main branch (perhaps after we have finished our assignment and passed the gradescope testing) we want to request that the main branch PULL the changes from our assignment1 branch.
 
+
+
 ![alt text](images/branches-4.png)
+
+
 
 Github is nice and tells us that it can be merged automatically. That is there is no conflicting changes being made. You hopefully won't come across merge conflicts often but I advise you look at these in your own time.
 
 ![alt text](images/branches-5.png)
 
 ![alt text](images/branches-6.png)
+
+
 
 We have now successfully merged the branch into the main.
 
@@ -389,7 +473,11 @@ Again, a reminder that for most of your courses using Gradescope you will need t
 This will mean that your github profile will fill up with a lot of small repositories. You can organise them into lists on Github by starring your repository and going to 'Your stars' and creating a new list.
 
 ![alt text](images/Lists-1.png)
+
+
 ![alt text](images/Lists-2.png)
+
+
 ![alt text](images/Lists-3.png)
 
 
