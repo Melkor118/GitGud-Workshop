@@ -216,10 +216,10 @@ Now that we have a Personal Access Token to allow CS50 to access our private rep
 There are a few different ways you can do this and I will leave it to you to decide as to which you use as each have pros and cons regarding security.
 
 #### Include the token in the remote url
-[GITHUB TOKEN 1](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/GITHUB_TOKEN-1.png)
+![GITHUB TOKEN 1](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/GITHUB_TOKEN-1.png)
 
 #### Change the Environment Variable
-[GITHUB TOKEN 2](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/GITHUB_TOKEN-2.png)
+![GITHUB TOKEN 2](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/GITHUB_TOKEN-2.png)
 
 Unfortunately these are not persistent. We have tested putting commands in the .bashrc file to make this persistent but it does not get backed up. I am still looking into a persistent method.
 
