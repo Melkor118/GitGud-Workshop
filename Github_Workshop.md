@@ -483,6 +483,7 @@ This will mean that your github profile will fill up with a lot of small reposit
 
 And that concludes the workshop. I am going to continue to investigate a more persistent solution to the Github Authentication issue. We will announce it once it is available.
 
+In the meantime, check out this helpful [git cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf) and work on Gitting Gud.
 
 References
 ---
