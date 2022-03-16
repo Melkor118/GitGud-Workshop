@@ -12,7 +12,28 @@ Go to [code.cs50.io](code.cs50.io) and connect your Github account. You will nee
 
 ***A quick side note, I highly recommend enrolling and taking [CS50's Course](https://cs50.harvard.edu/college/2022/spring/) if you're just starting out and have some time on your hands***
 
-Now that we have this set up lets move on.
+#### Git, Github and CS50 IDE (Code50)
+
+As outlined by the [Code50 documentation](https://cs50.readthedocs.io/code/) as the technology utilised by the Code50 [Codespaces](https://github.com/features/codespaces) uses their organisations Github we are blocked from using git within our codespace directly.
+
+```Shell
+
+$ git
+You are in a repository managed by CS50. Git is disabled. See https://cs50.ly/git.
+```
+
+The documentation states we can use git if we go back a directory.
+
+```Shell
+$ pwd
+/workspaces/68335119
+$ cd ..
+$ pwd
+/workspaces/
+$ git #the output will show correctly and the error will no longer be there
+```
+
+Now that we have this set up lets move on. We will run into issues later but we'll tackle them as it comes up.
 
 ![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Overview.png "Overview")
 
@@ -49,7 +70,7 @@ There are two ways to initially start a Git Repository. The easiest method is vi
 Remember that Git is solely housed on your computer and is not yet a collaborative tool.
 
 ```Shell
-$ git init MyFirstRepo -b main
+$ git init MyFirstRepo
 ```
 
 This will initialise a blank repository with the branch name main.
@@ -82,7 +103,7 @@ $ touch README.md
 $ [insert your text editor cmd here] README.md #Yes, Vi, Vim, Emacs, Atom are all the greatest thing since sliced bread. I use VScode like a peasant
 ```
 
-Write anything you'd like and save.
+Write anything you'd like and save (Code50 autosaves).
 
 ```Shell
 $ git status
@@ -176,9 +197,53 @@ Now as shown in the last picture, we have a few options to get content into our 
 ```Shell
 $ git remote add origin https://github.com/<username>/MyFirstRepo.git #create a remote location called origin at the following link to send my repository updates to
 $ git push --set-upstream origin main #-u can be used instead of --set-upstream
+remote: Write access to repository not granted.
+fatal: unable to access 'https://github.com/Melkor118/MyFirstRepo.git/': The requested URL returned error: 403
 ```
 
-The above will tell our local git repository to talk to the location we created on Github.
+The above will tell our local git repository to talk to the location we created on Github. unfortunately it errors.
+
+This error is caused by us using Code50. It's an authentication issue. As I mentioned earlier, this is using CS50's github and not ours. that means, since MyFirstRepo is private we cannot access it.
+
+Therefor we must provide a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to CS50. Take a look at that link as it steps you through creating one.
+
+I recommend setting the expiry date to be for when the semester ends. This token provides ANYONE who has it access to your private repositories. If you already have a strong Github portfolio you may want to create a new account to use for your uni work and you can collate the repos later on.
+
+Now that we have a Personal Access Token to allow CS50 to access our private repos lets put that in our environment.
+
+### Adding your Personal Access Token to Code50
+
+There are a few different ways you can do this and I will leave it to you to decide as to which you use as each have pros and cons regarding security.
+
+#### Include the token in the remote url
+[GITHUB TOKEN 1](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/GITHUB_TOKEN-1.png)
+
+#### Change the Environment Variable
+[GITHUB TOKEN 2](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/GITHUB_TOKEN-2.png)
+
+Unfortunately these are not persistent. We have tested putting commands in the .bashrc file to make this persistent but it does not get backed up. I am still looking into a persistent method.
+
+#### Create an initialisation script
+
+Another method I use to lower the inconvenience is to make the following command into a script that you can run manually when you start Code50.
+
+```Shell
+$ echo "export GITHUB_TOKEN=ghp_YourPersonalAccessToken" >> init.sh #Creates file with the content "export ..."
+$ chmod +x init.sh #make it an executable file
+$ ./init.sh #run the script
+```
+
+This will be backed up if you save it in your workspace and you can just run it when you start up Code50. Downside is your token is in plaintext in a file on the workspace but it won't be in your bash_history.
+
+after doing the above we can now continue.
+
+```Shell
+$ git remote add origin https://github.com/<username>/MyFirstRepo.git #create a remote location called origin at the following link to send my repository updates to
+$ git push --set-upstream origin main #-u can be used instead of --set-upstream
+```
+
+We should get no errors now.
+
 
 ```Shell
 Enumerating objects: 3, done.
@@ -194,6 +259,7 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 We have now pushed our local git repo to Github.
 
 ![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Github_New_Repo-4.png)
+
 
 
 
