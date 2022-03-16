@@ -260,7 +260,121 @@ We have now pushed our local git repo to Github.
 
 ![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Github_New_Repo-4.png)
 
+Lets try another way of creating a new repo. navigate to Github and create a 2nd repo. This time add a README and a .gitignore file using the C template.
 
+![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/MySecondRepo-2.png)
 
+Copy the github link as before and clone the repo into Code50.
+
+```Shell
+$ git clone https://github.com/<username>/MySecondRepo.git
+$ cd MySecondRepo
+$ ls -la
+drwxrwxrwx+ 3 ubuntu ubuntu 4096 Mar 16 10:08 ./
+drwxr-xrwx+ 8 ubuntu root   4096 Mar 16 10:08 ../
+drwxrwxrwx+ 8 ubuntu ubuntu 4096 Mar 16 10:08 .git/
+-rw-rw-rw-  1 ubuntu ubuntu  430 Mar 16 10:08 .gitignore
+-rw-rw-rw-  1 ubuntu ubuntu   14 Mar 16 10:08 README.md
+```
+
+We now have a new repo. Lets add a file.
+
+```Shell
+$ echo "This is a new file" >> new.txt #this creates a new file that has the contents "This is a new file"
+$ git status
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+$ git add new.txt
+$ git commit -m "we added a new file"
+$ git push origin main
+```
+Voila, we have now cloned and updated a repo. This method is usually easier and faster. Notice we didn't need to add the remote, it was already there.
+
+```Shell
+$ git remote -v
+origin  https://github.com/<username>/MySecondRepo.git (fetch)
+origin  https://github.com/<username>/MySecondRepo.git (push)
+```
+
+### Branching out
+
+Now that we know how to start up repositories let's talk about how the real world uses Github to develop software.
+
+Branches are a tool used in Github to allow simultaneous development across different versions of the Repo.
+
+![alt text](images/branches-1.png)
+
+The above diagram shows this. We won't need to do this during uni but you can use it if you wish to practice using branches. We will quickly touch on branching now.
+
+To create a branch first ensure your repo is up to date.
+
+```Shell
+$ git pull origin main
+From https://github.com/<username>/MySecondRepo
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+```
+
+Good now lets create a branch to work on an assignment in our second repo.
+
+```Shell
+$ git checkout -b assignment1
+Switched to a new branch 'assignment1'
+$ git branch
+* assignment1
+  main
+```
+
+We have now created a new branch.
+
+```Shell
+$ mkdir assignment1
+$ cd assignment1
+$ touch assignment1.cpp
+$ cd ..
+$ git status
+On branch assignment1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        assignment1/
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Note that we are now on the branch assignment1.
+
+let's add, commit and push our changes to the branch assignment1.
+
+```Shell
+$ git add assignment1/
+$ git commit -m "i am starting assignment1 like a good student"
+$ git push origin assignment1
+
+```
+
+Now if you go back to your repo you will see it looks a little different.
+
+![alt text](images/branches-2.png)
+
+We have a new branch which contains different content to our main branch, switch to it by click on the dropdown where main is.
+
+![alt text](images/branches-3.png)
+
+Now to merge the changes into our main branch (perhaps after we have finished our assignment and passed the gradescope testing) we want to request that the main branch PULL the changes from our assignment1 branch.
+
+![alt text](images/branches-4.png)
+
+Github is nice and tells us that it can be merged automatically. That is there is no conflicting changes being made. You hopefully won't come across merge conflicts often but I advise you look at these in your own time.
+
+![alt text](images/branches-5.png)
+
+![alt text](images/branches-6.png)
+
+We have now successfully merged the branch into the main.
 
 
