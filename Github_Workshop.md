@@ -165,11 +165,11 @@ Lets try and connect our existing repository to Github so we can share how gud w
 
 First we need to ask Github to set aside space on their servers for our Git repo.
 
-![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Git_New_Repo-1.png)
+![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Github_New_Repo-1.png)
 
-![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Git_New_Repo-2.png)
+![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Github_New_Repo-2.png)
 
-![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Git_New_Repo-3.png)
+![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Github_New_Repo-3.png)
 
 Now as shown in the last picture, we have a few options to get content into our new repo. lets connect our initial repo to Github using the 2nd snippet
 
@@ -193,7 +193,7 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 
 We have now pushed our local git repo to Github.
 
-![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Git_New_Repo-4.png)
+![alt text](https://github.com/Melkor118/GitGud-Workshop/blob/main/images/Github_New_Repo-4.png)
 
 
 
