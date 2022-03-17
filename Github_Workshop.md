@@ -267,14 +267,13 @@ Now that we have a Personal Access Token to allow CS50 to access our private rep
 
 There are a few different ways you can do this and I will leave it to you to decide as to which you use as each have pros and cons regarding security.
 
-#### Include the token in the remote url
 
+#### Change the Environment Variable
 
 ![GITHUB TOKEN 1](images/GITHUB_TOKEN-1.png)
 
 
-
-#### Change the Environment Variable
+#### Include the token in the remote url
 
 
 ![GITHUB TOKEN 2](images/GITHUB_TOKEN-2.png)
