@@ -280,7 +280,7 @@ There are a few different ways you can do this and I will leave it to you to dec
 
 
 
-Unfortunately these are not persistent. We have tested putting commands in the .bashrc file to make this persistent but it does not get backed up. I am still looking into a persistent method.
+Unfortunately these are not persistent. We have tested putting commands in the .bashrc file to make this persistent but it does not get backed up. Thankfully a more persistent solution was identified by Ian Knight and his team. It will be outlined below.
 
 #### Create an initialisation script
 
@@ -293,6 +293,18 @@ $ ./init.sh #run the script
 ```
 
 This will be backed up if you save it in your workspace and you can just run it when you start up Code50. Downside is your token is in plaintext in a file on the workspace but it won't be in your bash_history.
+
+#### Using a Remote with a PAT for persistence
+
+As outlined by the following [Piazza Post](https://piazza.com/class/kxncy9g35juez?cid=665) the below are the instructions laid out for a more persistence approach.
+
+The default repository for the codespace has access restrictions, but you can push your codespace’s repository to a new remote; this effectively clones your repository with its history to a new repository that you can then provide us access to.
+
+Steps as follows:
+
+1. Create a new, blank repository on GitHub:
+
+
 
 after doing the above we can now continue.
 
