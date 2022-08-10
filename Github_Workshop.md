@@ -303,8 +303,25 @@ The default repository for the codespace has access restrictions, but you can pu
 Steps as follows:
 
 1. Create a new, blank repository on GitHub:
+![[Pasted image 20220810154830.png]]
+Once created, do **NOT** add any new files/make any commits etc.
+2. Open your codespace, and link the repository you created as a remote to your environment but running:
+```bash
+git remote add MyGitHub https://YOUR_GITHUB_USERNAME:YOUR_PERSONAL_ACCESS_TOKEN@github.com/path/to/your/repository
+```
+being sure to use the correct URL for your repository with your username and token added.
+3. Push your repository to the new remote.  
+This can be done via the GUI:
+![[Pasted image 20220810154958.png]]
 
+Be sure to select MyGitHub (the name we used earlier) when prompted which remote to push to.  
+  
+It can also be done via the command line:
+```bash
+git push MyGitHub main 
+```
 
+Where _MyGitHub_ is the name used in the previous command, and _main_ is the name of your codespace's main branch.
 
 after doing the above we can now continue.
 
